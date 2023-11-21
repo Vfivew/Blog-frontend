@@ -1,0 +1,44 @@
+.root {
+  display: flex;
+  margin-top: 10px;
+  padding-bottom: 20px;
+  margin-right: 20px;
+  margin-left: 17px;
+}
+
+.avatar {
+  margin-right: 15px;
+}
+
+.form {
+  width: 100%;
+
+  div {
+    color: #C9F83E;
+    border-radius: 0;
+    label {
+      color: #C9F83E;
+    }
+    label:focus{
+      background-color:#C9F83E !important;
+    }
+    &:focus-within {
+      label {
+        color:#C9F83E;
+      }
+    }
+  }
+
+  button {
+    margin-top: 10px;
+    background-color:#C9F83E;
+    font-weight: bold;
+    color:#330570;
+  }
+  button:hover {
+    background-color: #996AD6;
+    color:#C9F83E;
+  }
+
+}
+

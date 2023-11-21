@@ -1,0 +1,21 @@
+.root {
+  .listText {
+    position: relative;
+    .text {
+      color: #C9F83E;
+      position: relative;
+      z-index: 1; 
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -32%;
+      left: 0;
+      width: 100%;
+      height: 1px; 
+      background-color: #C9F83E;
+      z-index: 0;
+    }
+  }
+}

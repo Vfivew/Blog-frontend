@@ -1,0 +1,66 @@
+.root{
+  background-color: #330570 !important;
+
+  .title {
+    
+  input {
+    color:#C9F83E !important;
+    font-size: 42px;
+    font-weight: 900;
+  }
+
+  div {
+    &:before,
+    &:after {
+      // поки що так
+    }
+  }
+}
+
+.image {
+  width: 100%;
+}
+
+.tags {
+  margin: 15px 0;
+  div{
+    color:#C9F83E !important;
+  }
+}
+
+.editor {
+  margin: 30px -30px;
+  div{
+    color:#C9F83E !important;
+    background-color:  #330570 !important;
+  }
+  :global {
+    .cm-s-easymde {
+      border: 0;
+      font-size: 22px;
+    }
+    .editor-toolbar {
+      border: 0;
+      background-color: rgb(0 0 0 / 2%);
+    }
+  }
+}
+
+.buttons {
+  display: flex;
+}
+
+  button {
+    background-color: #C9F83E !important;
+    color: #530FAD !important;
+    font-weight: bold !important;
+    margin-right: 15px !important;
+    transition: background-color 0.3s, color 0.3s !important;
+  
+  }
+
+  button:hover {
+    background-color: #530FAD;
+    color: #C9F83E;
+  }
+}
