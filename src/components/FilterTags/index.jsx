@@ -38,7 +38,7 @@ const FilterTags = () => {
             <Tab label="Популярні" className={`${styles.tab}`} value="views" />
         </Tabs>
         <Grid xs={8} item >
-            {(isPostsLoading ? [...Array(5)] : posts.items).map((obj, index) =>
+            {(isPostsLoading ? new Array(5).fill(null) : posts.items).map((obj, index) =>
             isPostsLoading ? (
                 <Post key={index} isLoading={true} />
             ) : (

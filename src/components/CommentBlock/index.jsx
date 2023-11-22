@@ -44,7 +44,7 @@ export const CommentsBlock = ({ items, children, isLoading = true, fetchPostData
   return (
     <SideBlock title="Коментарі">
       <List className={styles.root}>
-        {(isLoading ? [...Array(5)] : items).map((comment, index) => (
+        {(isLoading ? new Array(5).fill(null) : items).map((comment, index) => (
           <React.Fragment key={index}>
             <ListItem alignItems="flex-start">
             <ListItemAvatar className={styles.avatar}>

@@ -17,7 +17,7 @@ export const TagsBlock = ({ items, isLoading = true }) => {
   return (
     <SideBlock title="Теги">
       <List>
-        {(isLoading ? [...Array(5)] : items).map((name, i) => (
+        {(isLoading ? new Array(5).fill(null) : items).map((name, i) => (
           <a key={i} className={styles.tagItem} href={`posts/tags/filter/${name}`}>
             <ListItem key={i} disablePadding>
               <ListItemButton className={styles.button}>
