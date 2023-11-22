@@ -8,4 +8,4 @@ export * from "./Header";
 export * from './FilterTabs'
 export * from './FilterTags'
 export * from './CommentBlock'
-
+export * from './UserPost'

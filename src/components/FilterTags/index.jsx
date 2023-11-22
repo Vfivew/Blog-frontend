@@ -24,7 +24,7 @@ const FilterTags = () => {
     const handleTabChange = (event, newValue) => {
         setFilter(newValue);
     };
-
+    console.log(posts)
     return (
         <div>
         <h2>Пости по тегу #{tag}</h2>
@@ -52,6 +52,7 @@ const FilterTags = () => {
                 commentsCount={3}
                 tags={obj.tags}
                 avatarUrl={obj.user.avatarUrl}
+                userId={obj.user._id}
                 />
             ),
             )}

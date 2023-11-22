@@ -7,6 +7,7 @@ import { Home, FullPost, Registration, AddPost, Login } from './pages';
 import React from 'react';
 import { fetchAuthMe, selectIsAuth } from './redux/slices/auth';
 import FilterTags from './components/FilterTags';
+import UserPost from './components/UserPost';
 
 function App() {
   const dispatch = useDispatch();
@@ -25,6 +26,7 @@ function App() {
           <Route path="/posts/:id" element={<FullPost />} />
           <Route path="/posts/:id/edit" element={<AddPost />} />
           <Route path="/posts/tags/filter/:tag" element={<FilterTags />} />
+          <Route path='/posts/user/:userId' element={<UserPost />} />
           <Route path="/add-post" element={<AddPost />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Registration />} />

@@ -1,0 +1,31 @@
+section{
+    color:#C9F83E;
+    .title{
+        text-align: center;
+    }
+    .user-info{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    .user-info-container {
+        width: auto;
+        height: auto;
+        background-color: #330570;
+        padding: 20px;
+        border: 1px solid #C9F83E;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            }
+        }
+}
+}
+
+

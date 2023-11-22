@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 import ListItem from "@mui/material/ListItem";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
@@ -20,7 +21,8 @@ export const CommentsBlock = ({ items, children, isLoading = true, fetchPostData
   const dispatch = useDispatch();
   const userData = useSelector((state) => state.auth.data);
   const { id } = useParams();
-  
+  const navigate = useNavigate();
+  console.log(items)
   const onClickLike = async (commentId) => {
     if (!userData) {
       alert('Ви не зареєстровані');
@@ -38,20 +40,24 @@ export const CommentsBlock = ({ items, children, isLoading = true, fetchPostData
       alert(`Помилка ${error.message}. Cпробуйте пізніше`);
     }
   };
-  console.log(items)
+
   return (
     <SideBlock title="Коментарі">
       <List className={styles.root}>
         {(isLoading ? [...Array(5)] : items).map((comment, index) => (
           <React.Fragment key={index}>
             <ListItem alignItems="flex-start">
-              <ListItemAvatar>
-                {isLoading ? (
-                  <Skeleton variant="circular" width={40} height={40} />
-                ) : (
-                  <Avatar alt={comment.fullName} src={`${process.env.REACT_APP_URL}${comment.avatarUrl}`} />
-                )}
-              </ListItemAvatar>
+            <ListItemAvatar className={styles.avatar}>
+              {isLoading ? (
+                <Skeleton variant="circular" width={40} height={40} />
+              ) : (
+                <Avatar
+                  alt={comment.fullName}
+                  src={`${process.env.REACT_APP_URL}${comment.avatarUrl}`}
+                  onClick={() => navigate(`/posts/user/${comment.user}`)}
+                />
+              )}
+            </ListItemAvatar>
               {isLoading ? (
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <Skeleton variant="text" height={25} width={120} />

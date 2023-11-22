@@ -19,7 +19,7 @@ export const Home = () => {
     dispatch(fetchPosts());
     dispatch(fetchTags());
   }, []);
-  
+  console.log(posts)
   return (
     <>
       <FilterTabs/>
@@ -40,6 +40,7 @@ export const Home = () => {
                 tags={obj.tags}
                 avatarUrl={obj.user.avatarUrl}
                 isEditable={userData?._id === obj.user._id}
+                userId={obj.user._id}
               />
             ),
           )}
