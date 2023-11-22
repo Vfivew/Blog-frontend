@@ -26,7 +26,9 @@ export const FullPost = () => {
   useEffect(() => {
     fetchPostData();
   }, []);
-console.log(data)
+
+  console.log(data)
+  
   if (isLoading) {
     return <Post isLoading={isLoading} isFullPost />;
   }

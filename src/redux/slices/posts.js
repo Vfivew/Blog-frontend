@@ -3,6 +3,9 @@ import axios from '../../axios';
 
 export const fetchPosts = createAsyncThunk('posts/fetchPosts', async () => {
   const { data } = await axios.get('/posts/filter/new');
+  console.log(process.env.REACT_APP_URL)
+  console.log(process.env.REACT_APP_URL + '/posts/filter/new')
+  console.log(data, 'redux')
   return data;
 });
 
@@ -49,14 +52,17 @@ const postsSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchPosts.pending, (state) => {
+         console.log(state.posts.items, 'loading')
         state.posts.items = [];
         state.posts.status = 'loading';
       })
       .addCase(fetchPosts.fulfilled, (state, action) => {
+         console.log(state.posts.items,'loaded')
         state.posts.items = action.payload;
         state.posts.status = 'loaded';
       })
       .addCase(fetchPosts.rejected, (state) => {
+        console.log(state.posts.items, 'err')
         state.posts.items = [];
         state.posts.status = 'error';
       })

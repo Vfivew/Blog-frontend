@@ -11,7 +11,10 @@ export const Home = () => {
   const dispatch = useDispatch();
   const userData = useSelector((state) => state.auth.data);
   const { posts, tags } = useSelector((state) => state.posts);
-
+  console.log(userData, 'home')
+  console.log(posts, 'home')
+  console.log(tags, 'home')
+  console.log(process.env.REACT_APP_URL, 'home')
   const isPostsLoading = posts.status === 'loading';
   const isTagsLoading = tags.status === 'loading';
 
