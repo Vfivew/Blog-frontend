@@ -6,7 +6,7 @@ import { Post } from "../Post";
 import styles from "./UserPost.module.scss";
 
 const UserPost = () => {
-    const { userId } = useParams();
+  const { userId } = useParams();
   const [posts, setPosts] = useState([]);
   const [user, setUser] = useState(null);
 
