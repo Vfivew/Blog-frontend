@@ -1,4 +1,3 @@
-import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
@@ -12,7 +11,7 @@ import InputLabel from '@mui/material/InputLabel';
 import Input from '@mui/material/Input';
 import styles from './Login.module.scss';
 
-import { fetchAuth, fetchRegister, selectIsAuth } from '../../redux/slices/auth';
+import { fetchRegister, selectIsAuth } from '../../redux/slices/auth';
 
 export const Registration = () => {
   const isAuth = useSelector(selectIsAuth);
@@ -35,7 +34,7 @@ export const Registration = () => {
     formData.append('fullName', values.fullName);
     formData.append('email', values.email);
     formData.append('password', values.password);
-    formData.append('avatar', values.avatar[0]); 
+    formData.append('avatar', values.avatar[0]);
 
     const data = await dispatch(fetchRegister(formData));
 

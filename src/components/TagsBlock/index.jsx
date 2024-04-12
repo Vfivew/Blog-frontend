@@ -1,7 +1,3 @@
-// TagsBlock.jsx
-
-import React from 'react';
-
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
@@ -10,7 +6,7 @@ import TagIcon from '@mui/icons-material/Tag';
 import ListItemText from '@mui/material/ListItemText';
 import Skeleton from '@mui/material/Skeleton';
 
-import { SideBlock } from './SideBlock';
+import { SideBlock } from '../SideBlock';
 import styles from './TagsBlock.module.scss';
 
 export const TagsBlock = ({ items, isLoading = true }) => {

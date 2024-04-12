@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchFilter } from '../../redux/slices/posts';
-
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 
@@ -9,12 +8,12 @@ import styles from './FilterTabs.module.scss';
 
 const FilterTabs = () => {
   const dispatch = useDispatch();
-  const [value, setValue] = useState('new'); 
+  const [value, setValue] = useState('new');
 
   const handleTabChange = async (event, newValue) => {
     try {
-      setValue(newValue); 
-      dispatch(fetchFilter(newValue)); 
+      setValue(newValue);
+      dispatch(fetchFilter(newValue));
     } catch (error) {
       console.error(error);
     }

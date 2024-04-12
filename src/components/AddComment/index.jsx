@@ -1,48 +1,49 @@
 import { useState } from "react";
-import { useDispatch,useSelector } from "react-redux";
-import { fetchAddComment } from "../../redux/slices/posts";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-
-import styles from "./AddComment.module.scss";
-
 import TextField from "@mui/material/TextField";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 
-export const Index = ({fetchPostData}) => {
-  const [commentText, setCommentText] = useState(""); 
+import { fetchAddComment } from "../../redux/slices/posts";
+import styles from "./AddComment.module.scss";
+
+export const Index = ({ fetchPostData }) => {
+  const [commentText, setCommentText] = useState("");
   const dispatch = useDispatch();
   const userData = useSelector((state) => state.auth.data);
   const { id } = useParams();
 
   const handleCommentSubmit = async () => {
     if (!userData) {
-      alert('Ви не зареєстровані');
+      alert("Ви не зареєстровані");
       return;
     }
-   await dispatch(
+    await dispatch(
       fetchAddComment({
-        postId: id, 
+        postId: id,
         commentData: {
           user: userData._id,
           text: commentText,
           fullName: userData.fullName,
           avatarUrl: userData.avatarUrl,
-        }
+        },
       })
-   );
+    );
     fetchPostData();
-    setCommentText('')
+    setCommentText("");
   };
-
-  console.log(userData)
 
   return (
     <>
       <div className={styles.root}>
         <Avatar
           classes={{ root: styles.avatar }}
-          src={userData?`${process.env.REACT_APP_URL}${userData.avatarUrl}`:null}
+          src={
+            userData
+              ? `${process.env.REACT_APP_URL}${userData.avatarUrl}`
+              : null
+          }
         />
         <div className={styles.form}>
           <TextField

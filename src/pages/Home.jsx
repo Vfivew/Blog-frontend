@@ -11,18 +11,15 @@ export const Home = () => {
   const dispatch = useDispatch();
   const userData = useSelector((state) => state.auth.data);
   const { posts, tags } = useSelector((state) => state.posts);
-  console.log(userData, 'home')
-  console.log(posts, 'home')
-  console.log(tags, 'home')
-  console.log(process.env.REACT_APP_URL, 'home')
+
   const isPostsLoading = posts.status === 'loading';
   const isTagsLoading = tags.status === 'loading';
 
   useEffect(() => {
     dispatch(fetchPosts());
     dispatch(fetchTags());
-  }, []);
-  console.log(posts.items)
+  }, [dispatch]);
+
   return (
     <>
       <FilterTabs/>
@@ -50,7 +47,6 @@ export const Home = () => {
         </Grid>
         <Grid xs={4} item>
           <TagsBlock items={tags.items} isLoading={isTagsLoading} />
-          {/* Ще щось? */}
         </Grid>
       </Grid>
     </>
