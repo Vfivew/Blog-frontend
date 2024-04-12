@@ -1,13 +1,13 @@
 .root {
-  .avatar{
+  .avatar {
     cursor: pointer;
   }
   .listText {
     position: relative;
     .text {
-      color: #C9F83E;
+      color: #c9f83e;
       position: relative;
-      z-index: 1; 
+      z-index: 1;
     }
 
     &::after {
@@ -16,8 +16,8 @@
       bottom: -32%;
       left: 0;
       width: 100%;
-      height: 1px; 
-      background-color: #C9F83E;
+      height: 1px;
+      background-color: #c9f83e;
       z-index: 0;
     }
   }

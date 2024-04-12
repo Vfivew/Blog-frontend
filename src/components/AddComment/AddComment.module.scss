@@ -14,31 +14,29 @@
   width: 100%;
 
   div {
-    color: #C9F83E;
+    color: #c9f83e;
     border-radius: 0;
     label {
-      color: #C9F83E;
+      color: #c9f83e;
     }
-    label:focus{
-      background-color:#C9F83E !important;
+    label:focus {
+      background-color: #c9f83e !important;
     }
     &:focus-within {
       label {
-        color:#C9F83E;
+        color: #c9f83e;
       }
     }
   }
 
   button {
     margin-top: 10px;
-    background-color:#C9F83E;
+    background-color: #c9f83e;
     font-weight: bold;
-    color:#330570;
+    color: #36394a;
   }
   button:hover {
-    background-color: #996AD6;
-    color:#C9F83E;
+    background-color: #434c66;
+    color: #c9f83e;
   }
-
 }
-

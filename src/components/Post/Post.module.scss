@@ -1,17 +1,17 @@
 $blue: #4361ee;
 
 .root {
-  background-color: #330570;
-  border: 1px solid #E6FC3F;
+  background-color: #36394a;
+  border: 1px solid #e6fc3f;
   border-radius: 6px;
   overflow: hidden;
   margin-bottom: 15px;
   position: relative;
-  color:#C9F83E;
+  color: #c9f83e;
   &:hover {
     border: 1px solid#C9F83E;
-    background-color:#530FAD;
-    box-shadow: 0 0 0 1px #C9F83E;
+    background-color: #434c66;
+    box-shadow: 0 0 0 1px #c9f83e;
 
     .editButtons {
       opacity: 1;
@@ -20,8 +20,8 @@ $blue: #4361ee;
 
   &Full {
     &:hover {
-      background-color: #530FAD;
-      border: 1px solid #ECFC71;
+      background-color: #86899e;
+      border: 1px solid #ecfc71;
       box-shadow: none;
     }
   }
@@ -61,10 +61,13 @@ $blue: #4361ee;
 
   a {
     text-decoration: none;
-    color:#DCF900;
+    color: #dcf900;
+    opacity: 0.8;
+    transition: 0.3s;
 
     &:hover {
-      color: #C9F83E;
+      color: saturate(#c9f83e, 100%);
+      opacity: 1;
     }
   }
 
@@ -91,7 +94,7 @@ $blue: #4361ee;
 
     a {
       text-decoration: none;
-      color: #C9F83E;
+      color: #c9f83e;
     }
   }
 }

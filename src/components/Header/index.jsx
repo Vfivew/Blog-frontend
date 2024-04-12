@@ -1,20 +1,19 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import Button from "@mui/material/Button";
+import Container from "@mui/material/Container";
 
-import Button from '@mui/material/Button';
-import Container from '@mui/material/Container';
-
-import styles from './Header.module.scss';
-import { logout, selectIsAuth } from '../../redux/slices/auth';
+import styles from "./Header.module.scss";
+import { logout, selectIsAuth } from "../../redux/slices/auth";
 
 export const Header = () => {
   const dispatch = useDispatch();
   const isAuth = useSelector(selectIsAuth);
 
   const onClickLogout = () => {
-    if (window.confirm('Ви дійсно хочете вийти?')) {
+    if (window.confirm("Ви дійсно хочете вийти?")) {
       dispatch(logout());
-      window.localStorage.removeItem('token');
+      window.localStorage.removeItem("token");
     }
   };
 
@@ -22,16 +21,22 @@ export const Header = () => {
     <div className={styles.root}>
       <Container maxWidth="lg">
         <div className={styles.inner}>
-          <Link className={styles.logo} to="/">
-            <div>CodeCraftsman BLOG</div>
-          </Link>
+          <div className={styles.link}>
+            <Link className={styles.logo} to="/">
+              CodeCraftsman BLOG
+            </Link>
+          </div>
           <div className={styles.buttons}>
             {isAuth ? (
               <>
                 <Link to="/add-post">
                   <Button variant="contained">Написати статтю</Button>
                 </Link>
-                <Button onClick={onClickLogout} variant="contained" color="error">
+                <Button
+                  onClick={onClickLogout}
+                  variant="contained"
+                  color="error"
+                >
                   Вийти
                 </Button>
               </>
